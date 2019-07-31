@@ -1,0 +1,10 @@
+{
+    "react" : {
+        "name": "React",
+        "description": "A JavaScript library for building user interfaces",
+        "icon": "images/docs/react.png",
+        "algolia_index": "react",
+        "keyword": "reactdocs",
+        "url": "https://reactjs.org/docs/getting-started.html"
+    }
+}
