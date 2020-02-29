@@ -17,9 +17,9 @@ from docs import DocSearch
 
 LOGGING = logging.getLogger(__name__)
 
+
 class DocsearchExtension(Extension):
     """ Main Extension Class  """
-
     def __init__(self):
         """ Extension constructor"""
         super(DocsearchExtension, self).__init__()
@@ -34,11 +34,9 @@ class DocsearchExtension(Extension):
 
         if not docs:
             return RenderResultListAction([
-                ExtensionResultItem(
-                    icon='images/icon.png',
-                    name='No results found',
-                    on_enter=HideWindowAction()
-                )
+                ExtensionResultItem(icon='images/icon.png',
+                                    name='No results found',
+                                    on_enter=HideWindowAction())
             ])
 
         for doc in docs[:8]:
@@ -48,11 +46,11 @@ class DocsearchExtension(Extension):
                     name=doc['name'],
                     description=doc['description'],
                     on_alt_enter=OpenUrlAction(doc['url']),
-                    on_enter=SetUserQueryAction("%s %s > " % (event.get_keyword(), doc['key']))
-                )
-            )
+                    on_enter=SetUserQueryAction(
+                        "%s %s > " % (event.get_keyword(), doc['key']))))
 
         return RenderResultListAction(items)
+
 
 class KeywordQueryEventListener(EventListener):
     """ Listener that handles the user input """
@@ -79,9 +77,8 @@ class KeywordQueryEventListener(EventListener):
                         icon='images/icon.png',
                         name='Please type a minimum of 3 characters',
                         description='Searching ...',
-                        on_enter=HideWindowAction()
-                    )
-            ])
+                        on_enter=HideWindowAction())
+                ])
 
             result = extension.searcher.search(docset, search_term)
 
@@ -92,9 +89,8 @@ class KeywordQueryEventListener(EventListener):
                     ExtensionResultItem(
                         icon='images/icon.png',
                         name='No results matching your criteria',
-                        on_enter=HideWindowAction()
-                    )]
-                )
+                        on_enter=HideWindowAction())
+                ])
 
             for i in result[:8]:
                 items.append(
@@ -107,15 +103,16 @@ class KeywordQueryEventListener(EventListener):
             return RenderResultListAction(items)
 
         except Exception as err:
-            LOGGING.error(err)
-            return RenderResultListAction([
-                ExtensionResultItem(
-                    icon="images/icon.png",
-                    name='An error ocurred when searching documentation',
-                    description='err',
-                    on_enter=HideWindowAction()
-                )
-            ])
+            raise err
+            # return RenderResultListAction([
+            #     ExtensionResultItem(
+            #         icon="images/icon.png",
+            #         name='An error ocurred when searching documentation',
+            #         description='err',
+            #         on_enter=HideWindowAction()
+            #     )
+            # ])
+
 
 if __name__ == '__main__':
     DocsearchExtension().run()

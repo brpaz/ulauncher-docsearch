@@ -4,23 +4,24 @@ Module responsible for search into docs
 
 import json
 import os
+import logging
 from algoliasearch.search_client import SearchClient
-
-ALGOLIA_APPLICAITON_ID = 'BH4D9OD16A'
-ALGOLIA_API_KEY = '36221914cce388c46d0420343e0bb32e'
 
 DEFAULT_DOC_IMAGE = 'images/icon.png'
 
-class DocSearch:
-    """ Searches Docs """
+LOGGING = logging.getLogger(__name__)
 
+DOCSETS_FILE_PATH = os.path.join(os.path.dirname(__file__), 'data',
+                                 'docsets.json')
+
+
+class DocSearch:
+    """ Searches Documentation On DocSearch based applications """
     def __init__(self):
         """ Class constructor """
-
-        self.algolia_client = SearchClient.create(ALGOLIA_APPLICAITON_ID, ALGOLIA_API_KEY)
         self.docsets = {}
 
-        with open(os.path.join(os.path.dirname(__file__), 'data', 'docsets.json'), 'r') as data:
+        with open(DOCSETS_FILE_PATH, 'r') as data:
             self.docsets = json.load(data)
 
     def get_available_docs(self, filter_term):
@@ -36,7 +37,9 @@ class DocSearch:
             })
 
         if filter_term:
-            docs = [x for x in docs if filter_term.lower() in x['name'].lower()]
+            docs = [
+                x for x in docs if filter_term.lower() in x['name'].lower()
+            ]
 
         return docs
 
@@ -54,13 +57,15 @@ class DocSearch:
 
     def search(self, docset, term):
         """ Searches a term on a specific docset and return the results """
-
         docset = self.get_docset(docset)
 
         if not docset:
             raise ValueError("The specified docset is not known")
 
-        index = self.algolia_client.init_index(docset['algolia_index'])
+        algolia_client = SearchClient.create(docset['algolia_application_id'],
+                                             docset['algolia_api_key'])
+
+        index = algolia_client.init_index(docset['algolia_index'])
         search_results = index.search(term)
 
         if not search_results['hits']:

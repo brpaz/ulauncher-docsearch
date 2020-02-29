@@ -1,12 +1,11 @@
 # ulauncher-docsearch
 
 [![Ulauncher Extension](https://img.shields.io/badge/Ulauncher-Extension-green.svg?style=for-the-badge)](https://ext.ulauncher.io/-/github-brpaz-ulauncher-docsearch)
-[![CircleCI](https://img.shields.io/circleci/build/github/brpaz/ulauncher-docsearch.svg?style=for-the-badge)](https://circleci.com/gh/brpaz/ulauncher-docsearch)
 ![License](https://img.shields.io/github/license/brpaz/ulauncher-docsearch.svg?style=for-the-badge)
 
 ![Algolia](images/search-by-algolia-light-background.svg)
 
-> Full text search on Documentation sites, powered by [Algolia](https://www.algolia.com/).
+> Full text search on Documentation sites, powered by [Algolia](https://www.algolia.com/) Docsearch.
 
 **This is a work in progress project and its not ready to be used yet.**
 
@@ -18,8 +17,29 @@ This extension, aims to make documentation search less painfull, allowing you to
 
 ## Features
 
-This extension allows to easily search on popular documentation websites, using [Algolia DocSearch](https://community.algolia.com/docsearch/).
+This extension allows to easily search on popular documentation websites, that implements [Algolia DocSearch](https://community.algolia.com/docsearch/).
 
+The following documentation sites are included by default in this extension:
+
+* Apollo GraphQL
+* Cypress
+* Echo Framework
+* Eslint
+* Gatsby
+* GitLab
+* GraphQL
+* Gridsome
+* Jest
+* NuxtJS
+* Parcel
+* React
+* Scala
+* Tailwind
+* Typescript
+* VueJS
+* Vuepress
+* Vuetify
+* Webpack
 
 
 ## Usage
@@ -54,6 +74,15 @@ To see your changes, stop ulauncher and run it from the command line with: `ulau
 ## Contributing
 
 All contributions are welcome.
+
+### Add new Documentation
+
+It´s pretty easy to add new documentation to this extension. The only requirement is that the Documentation site to use [Algolia DocSearch](https://community.algolia.com/docsearch/) as the search engine. You can check all availalbe sites [here](https://github.com/algolia/docsearch-configs).
+
+Then add an entry to the [data/docsets.json](data/docsets.json) file on this extension. The "algolia_index", "algolia_application_id" and "algolia_api_key" properties can be found by inspecting the search request of the original site. For example for VueJS documentation, do a search and look for the following in the "Netowrk tab":
+
+![add docs](add-docs.png)
+
 
 ## Show your support
 

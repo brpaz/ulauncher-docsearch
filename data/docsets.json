@@ -1,10 +1,173 @@
 {
-    "react" : {
+    "react": {
         "name": "React",
         "description": "A JavaScript library for building user interfaces",
         "icon": "images/docs/react.png",
         "algolia_index": "react",
-        "keyword": "reactdocs",
+        "algolia_application_id": "BH4D9OD16A",
+        "algolia_api_key": "36221914cce388c46d0420343e0bb32e",
         "url": "https://reactjs.org/docs/getting-started.html"
+    },
+    "vue": {
+        "name": "VueJS",
+        "description": "the Progressive JavaScript Framework",
+        "icon": "images/docs/vue.png",
+        "algolia_index": "vuejs",
+        "algolia_application_id": "BH4D9OD16A",
+        "algolia_api_key": "85cc3221c9f23bfbaa4e3913dd7625ea",
+        "url": "https://reactjs.org/docs/getting-started.html"
+    },
+    "gitlab": {
+        "name": "GitLab",
+        "description": "The entire DevOps lifecycle in one application.",
+        "icon": "images/docs/gitlab.png",
+        "algolia_index": "gitlab",
+        "algolia_application_id": "BH4D9OD16A",
+        "algolia_api_key": "ce1690e1421303458a1fcbea0cc4a927",
+        "url": "https://docs.gitlab.com/"
+    },
+    "cypress": {
+        "name": "Cypress",
+        "description": "the Progressive JavaScript Framework",
+        "icon": "images/docs/cypress.png",
+        "algolia_index": "cypress",
+        "algolia_application_id": "R9KDA5FMJB",
+        "algolia_api_key": "8e6c3119ee78db1ad10cd7bfb439d726",
+        "url": "https://docs.cypress.io/"
+    },
+    "tailwind": {
+        "name": "Tailwind",
+        "description": "the Progressive JavaScript Framework",
+        "icon": "images/docs/tailwind.png",
+        "algolia_index": "tailwindcss",
+        "algolia_application_id": "BH4D9OD16A",
+        "algolia_api_key": "3df93446658cd9c4e314d4c02a052188",
+        "url": "https://tailwindcss.com/docs/installation/"
+    },
+    "jest": {
+        "name": "Jest",
+        "description": "Jest is a delightful JavaScript Testing Framework with a focus on simplicity.",
+        "icon": "images/docs/jest.png",
+        "algolia_index": "tailwindcss",
+        "algolia_application_id": "BH4D9OD16A",
+        "algolia_api_key": "833906d7486e4059359fa58823c4ef56",
+        "url": "https://jestjs.io/docs/en/getting-started"
+    },
+    "nuxt": {
+        "name": "Nuxt",
+        "description": "The Progressive Vue.js Framework",
+        "icon": "images/docs/nuxtjs.png",
+        "algolia_index": "nuxtjs",
+        "algolia_application_id": "BH4D9OD16A",
+        "algolia_api_key": "ff80fbf046ce827f64f06e16f82f1401",
+        "url": "https://nuxtjs.org/"
+    },
+    "vuepress": {
+        "name": "Vuepress",
+        "description": "The Progressive Vue.js Framework",
+        "icon": "images/docs/vuepress.png",
+        "algolia_index": "vuepress",
+        "algolia_application_id": "BH4D9OD16A",
+        "algolia_api_key": "3a539aab83105f01761a137c61004d85",
+        "url": "https://vuepress.vuejs.org/guide/"
+    },
+    "gatsby": {
+        "name": "Gatbsy",
+        "description": "Gatsby is a blazing fast modern site generator for React.",
+        "icon": "images/docs/gatsby.png",
+        "algolia_index": "gatsbyjs",
+        "algolia_application_id": "BH4D9OD16A",
+        "algolia_api_key": "71af1f9c4bd947f0252e17051df13f9c",
+        "url": "https://www.gatsbyjs.org/docs/"
+    },
+    "typescript": {
+        "name": "Typescript",
+        "description": "TypeScript is a typed superset of JavaScript that compiles to plain JavaScript.",
+        "icon": "images/docs/typescript.png",
+        "algolia_index": "typescriptlang",
+        "algolia_application_id": "BH4D9OD16A",
+        "algolia_api_key": "3c2db2aef0c7ff26e8911267474a9b2c",
+        "url": "https://www.gatsbyjs.org/docs/"
+    },
+    "echo": {
+        "name": "Echo",
+        "description": "High performance, extensible, minimalist Go web framework",
+        "icon": "images/docs/echo.png",
+        "algolia_index": "labstack",
+        "algolia_application_id": "BH4D9OD16A",
+        "algolia_api_key": "69dfc65b57ccba29ec34b68aa5b274ed",
+        "url": "https://echo.labstack.com/"
+    },
+    "gridsome": {
+        "name": "Gridsome",
+        "description": "Gridsome is a free and open source Vue.js-powered framework for building websites & apps that are fast by default",
+        "icon": "images/docs/gridsome.png",
+        "algolia_index": "gridsome",
+        "algolia_application_id": "BH4D9OD16A",
+        "algolia_api_key": "a7400a3a94b256c5283cb05efb860fc1",
+        "url": "https://gridsome.org/docs/"
+    },
+    "graphql": {
+        "name": "GraphQL",
+        "description": "GraphQL is a query language for your API, and a server-side runtime for executing queries by using a type system you define for your data",
+        "icon": "images/docs/graphql.png",
+        "algolia_index": "graphql",
+        "algolia_application_id": "BH4D9OD16A",
+        "algolia_api_key": "d103541f3e6041148aade2e746ed4d61",
+        "url": "https://graphql.org/learn/"
+    },
+    "eslint": {
+        "name": "ESLint",
+        "description": "Find and fix problems in your JavaScript code",
+        "icon": "images/docs/eslint.png",
+        "algolia_index": "eslint",
+        "algolia_application_id": "BH4D9OD16A",
+        "algolia_api_key": "891b0e977d96c762a3821e0c00172ac9",
+        "url": "https://eslint.org/"
+    },
+    "scala": {
+        "name": "Scala",
+        "description": "Scala combines object-oriented and functional programming in one concise, high-level language.",
+        "icon": "images/docs/scala.png",
+        "algolia_index": "scala-lang",
+        "algolia_application_id": "BH4D9OD16A",
+        "algolia_api_key": "fbc439670f5d4e3730cdcb715c359391",
+        "url": "https://docs.scala-lang.org/"
+    },
+    "webpack": {
+        "name": "Webpack",
+        "description": "Javascript module bundler",
+        "icon": "images/docs/webpack.png",
+        "algolia_index": "webpack-js-org",
+        "algolia_application_id": "BH4D9OD16A",
+        "algolia_api_key": "fac401d1a5f68bc41f01fb6261661490",
+        "url": "https://webpack.js.org/"
+    },
+    "apollo": {
+        "name": "Apollo GraphQL",
+        "description": "Apollo is a platform for building a data graph, a communication layer that seamlessly connects your application clients to your back-end services.",
+        "icon": "images/docs/apollo.png",
+        "algolia_index": "apollodata",
+        "algolia_application_id": "BH4D9OD16A",
+        "algolia_api_key": "768e823959d35bbd51e4b2439be13fb7",
+        "url": "https://www.apollographql.com/docs/"
+    },
+    "vuetify": {
+        "name": "vuetify",
+        "description": "Material Design Component Framework",
+        "icon": "images/docs/vuetify.png",
+        "algolia_index": "vuetify",
+        "algolia_application_id": "BH4D9OD16A",
+        "algolia_api_key": "259d4615e283a1bbaa3313b4eff7881c",
+        "url": "https://vuetifyjs.com/en/getting-started/quick-start"
+    },
+    "parcel": {
+        "name": "parcel",
+        "description": "Parcel is a web application bundler, differentiated by its developer experience.",
+        "icon": "images/docs/parcel.png",
+        "algolia_index": "parceljs",
+        "algolia_application_id": "BH4D9OD16A",
+        "algolia_api_key": "8b6be780425a72d1a1683abea2636778",
+        "url": "https://vuetifyjs.com/en/getting-started/quick-start"
     }
 }

@@ -1,17 +1,18 @@
 {
-  "required_api_version": "^2.0.0",
-  "name": "DocSearch",
-  "description": "Full text search on Documentation sites, powered by Algolia",
-  "developer_name": "Bruno Paz",
-  "icon": "images/icon.png",
-  "options": {
-    "query_debounce": 0.1
-  },
-  "preferences": [{
-      "id": "kw",
-      "type": "keyword",
-      "name": "Documenation Search",
-      "default_value": "docs"
-    }
-  ]
+    "required_api_version": "^2.0.0",
+    "name": "DocSearch",
+    "description": "Full text search on Documentation sites, powered by Algolia",
+    "developer_name": "Bruno Paz",
+    "icon": "images/icon.png",
+    "options": {
+        "query_debounce": 0.1
+    },
+    "preferences": [
+        {
+            "id": "kw",
+            "type": "keyword",
+            "name": "Documenation Search",
+            "default_value": "docs"
+        }
+    ]
 }
