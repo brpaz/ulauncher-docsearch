@@ -103,15 +103,14 @@ class KeywordQueryEventListener(EventListener):
             return RenderResultListAction(items)
 
         except Exception as err:
-            raise err
-            # return RenderResultListAction([
-            #     ExtensionResultItem(
-            #         icon="images/icon.png",
-            #         name='An error ocurred when searching documentation',
-            #         description='err',
-            #         on_enter=HideWindowAction()
-            #     )
-            # ])
+            LOGGING.error(err)
+            return RenderResultListAction([
+                ExtensionResultItem(
+                    icon="images/icon.png",
+                    name='An error ocurred when searching documentation',
+                    description='err',
+                    on_enter=HideWindowAction())
+            ])
 
 
 if __name__ == '__main__':
