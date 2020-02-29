@@ -72,13 +72,8 @@ To see your changes, stop ulauncher and run it from the command line with: `ulau
 
 All contributions are welcome.
 
-### Add new Documentation
+* [Add new documentation](docs/add-new-doc.md)
 
-It´s pretty easy to add new documentation to this extension. The only requirement is that the Documentation site to use [Algolia DocSearch](https://community.algolia.com/docsearch/) as the search engine. You can check all availalbe sites [here](https://github.com/algolia/docsearch-configs).
-
-Then add an entry to the [data/docsets.json](data/docsets.json) file on this extension. The "algolia_index", "algolia_application_id" and "algolia_api_key" properties can be found by inspecting the search request of the original site. For example for VueJS documentation, do a search and look for the following in the "Netowrk tab":
-
-![add docs](add-docs.png)
 
 ## Show your support
 
