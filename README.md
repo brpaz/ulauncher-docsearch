@@ -1,13 +1,11 @@
 # ulauncher-docsearch
 
+> Full text search on Documentation sites, powered by [Algolia](https://www.algolia.com/) Docsearch.
+
 [![Ulauncher Extension](https://img.shields.io/badge/Ulauncher-Extension-green.svg?style=for-the-badge)](https://ext.ulauncher.io/-/github-brpaz-ulauncher-docsearch)
 ![License](https://img.shields.io/github/license/brpaz/ulauncher-docsearch.svg?style=for-the-badge)
 
 ![Algolia](images/search-by-algolia-light-background.svg)
-
-> Full text search on Documentation sites, powered by [Algolia](https://www.algolia.com/) Docsearch.
-
-**This is a work in progress project and its not ready to be used yet.**
 
 ## Motivation
 
@@ -21,26 +19,25 @@ This extension allows to easily search on popular documentation websites, that i
 
 The following documentation sites are included by default in this extension:
 
-* Apollo GraphQL
-* Cypress
-* Echo Framework
-* Eslint
-* Gatsby
-* GitLab
-* GraphQL
-* Gridsome
-* Jest
-* NuxtJS
-* Parcel
-* React
-* Scala
-* Tailwind
-* Typescript
-* VueJS
-* Vuepress
-* Vuetify
-* Webpack
-
+-   Apollo GraphQL
+-   Cypress
+-   Echo Framework
+-   Eslint
+-   Gatsby
+-   GitLab
+-   GraphQL
+-   Gridsome
+-   Jest
+-   NuxtJS
+-   Parcel
+-   React
+-   Scala
+-   Tailwind
+-   Typescript
+-   VueJS
+-   Vuepress
+-   Vuetify
+-   Webpack
 
 ## Usage
 
@@ -48,9 +45,9 @@ The following documentation sites are included by default in this extension:
 
 ## Requirements
 
-* Ulauncher V5
-* Python 3
-  * algoliasearch>=2.0,<3.0 (install with pip3)
+- Ulauncher V5
+- Python 3
+  - algoliasearch>=2.0,<3.0 (install with pip3)
 
 ## Install
 
@@ -83,15 +80,12 @@ Then add an entry to the [data/docsets.json](data/docsets.json) file on this ext
 
 ![add docs](add-docs.png)
 
-
 ## Show your support
 
 <a href="https://www.buymeacoffee.com/Z1Bu6asGV" target="_blank"><img src="https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png" alt="Buy Me A Coffee" style="height: 41px !important;width: 174px !important;box-shadow: 0px 3px 2px 0px rgba(190, 190, 190, 0.5) !important;-webkit-box-shadow: 0px 3px 2px 0px rgba(190, 190, 190, 0.5) !important;" ></a>
 
-
-## License 
+## License
 
 Copywright @ 2019 [Bruno Paz](https://github.com/brpaz)
 
 This project is [MIT](LLICENSE) Licensed.
-
