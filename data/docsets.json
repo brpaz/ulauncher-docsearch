@@ -161,6 +161,24 @@
         "algolia_api_key": "259d4615e283a1bbaa3313b4eff7881c",
         "url": "https://vuetifyjs.com/en/getting-started/quick-start"
     },
+    "vuex": {
+        "name": "Vuex",
+        "description": "Vuex is a state management pattern + library for Vue.js applications.",
+        "icon": "images/docs/vuex.png",
+        "algolia_index": "vuex",
+        "algolia_application_id": "BH4D9OD16A",
+        "algolia_api_key": "97f135e4b5f5487fb53f0f2dae8db59d",
+        "url": "https://vuex.vuejs.org/"
+    },
+    "vue-router": {
+        "name": "Vue Router",
+        "description": "Vue Router is the official router for Vue.js",
+        "icon": "images/docs/vue.png",
+        "algolia_index": "vue-router",
+        "algolia_application_id": "BH4D9OD16A",
+        "algolia_api_key": "f854bb46d3de7eeb921a3b9173bd0d4c",
+        "url": "https://router.vuejs.org/"
+    },
     "parcel": {
         "name": "parcel",
         "description": "Parcel is a web application bundler, differentiated by its developer experience.",
@@ -169,5 +187,86 @@
         "algolia_application_id": "BH4D9OD16A",
         "algolia_api_key": "8b6be780425a72d1a1683abea2636778",
         "url": "https://vuetifyjs.com/en/getting-started/quick-start"
+    },
+    "laravel": {
+        "name": "Laravel",
+        "description": "The PHP Framework for Web Artisans",
+        "icon": "images/docs/laravel.png",
+        "algolia_index": "laravel",
+        "algolia_application_id": "BH4D9OD16A",
+        "algolia_api_key": "7dc4fe97e150304d1bf34f5043f178c4",
+        "url": "https://laravel.com/docs/7.x/"
+    },
+    "nestjs": {
+        "name": "NestJS",
+        "description": "A progressive Node.js framework for building efficient, reliable and scalable server-side applications",
+        "icon": "images/docs/nestjs.png",
+        "algolia_index": "nestjs",
+        "algolia_application_id": "BH4D9OD16A",
+        "algolia_api_key": "9ea53de1a6911255834352bbbe4d3417",
+        "url": "https://docs.nestjs.com/"
+    },
+    "bootstrap": {
+        "name": "Bootstrap",
+        "description": "Build fast, responsive sites with Bootstrap",
+        "icon": "images/docs/bootstrap.png",
+        "algolia_index": "bootstrap",
+        "algolia_application_id": "BH4D9OD16A",
+        "algolia_api_key": "5990ad008512000bba2cf951ccf0332f",
+        "url": "https://getbootstrap.com/docs/4.5/getting-started/introduction/"
+    },
+    "netlify": {
+        "name": "Netlify",
+        "description": "",
+        "icon": "images/docs/netlify.png",
+        "algolia_index": "docs-manual",
+        "algolia_application_id": "4RTNPM1QF9",
+        "algolia_api_key": "260466eb2466a36278b2fdbcc56ad7ba",
+        "url": "https://docs.netlify.com/"
+    },
+    "babel": {
+        "name": "Babel",
+        "description": "Use next generation JavaScript, today.",
+        "icon": "images/docs/babeljs.png",
+        "algolia_index": "babeljs",
+        "algolia_application_id": "BH4D9OD16A",
+        "algolia_api_key": "d42906b043c5422ea07b44fd49c40a0d",
+        "url": "https://babeljs.io/docs/en/"
+    },
+    "gorm": {
+        "name": "Gorm",
+        "description": "The fantastic ORM library for Golang",
+        "icon": "images/docs/gorm.png",
+        "algolia_index": "gorm",
+        "algolia_application_id": "BH4D9OD16A",
+        "algolia_api_key": "442683d88a109de42c6d01bb0c7c4cec",
+        "url": "https://gorm.io/"
+    },
+    "grafana": {
+        "name": "Grafana",
+        "description": "The fantastic ORM library for Golang",
+        "icon": "images/docs/grafana.png",
+        "algolia_index": "grafana",
+        "algolia_application_id": "BH4D9OD16A",
+        "algolia_api_key": "0bd2bd6939038c5ce2c9395732dcf040",
+        "url": "https://grafana.com/docs/grafana/latest/"
+    },
+    "prometheus": {
+        "name": "Prometheus",
+        "description": "Power your metrics and alerting with a leading open-source monitoring solution.",
+        "icon": "images/docs/prometheus.png",
+        "algolia_index": "prometheus",
+        "algolia_application_id": "BH4D9OD16A",
+        "algolia_api_key": "48ac0b7924908a1fd40b1cb18b402ba1",
+        "url": "https://prometheus.io/docs/"
+    },
+    "prettier": {
+        "name": "Prettier",
+        "description": "An opinionated code formatter",
+        "icon": "images/docs/prettier.png",
+        "algolia_index": "prettier",
+        "algolia_application_id": "BH4D9OD16A",
+        "algolia_api_key": "9fcdb2a62af4c47cc5eecf3d5a747818",
+        "url": "https://prettier.io/docs/en"
     }
 }

@@ -20,24 +20,33 @@ This extension allows to easily search on popular documentation websites, that i
 The following documentation sites are included by default in this extension:
 
 -   Apollo GraphQL
+-   Babel
 -   Cypress
--   Echo Framework
+-   Echo
 -   Eslint
 -   Gatsby
 -   GitLab
+-   GORM
+-   Grafana
 -   GraphQL
 -   Gridsome
 -   Jest
+-   Laravel
 -   NuxtJS
 -   Parcel
+-   Prettier
+-   Prometheus
 -   React
 -   Scala
 -   Tailwind
 -   Typescript
--   VueJS
+-   Vue
 -   Vuepress
 -   Vuetify
+-   Vuex
+-   Vue-Router
 -   Webpack
+
 
 ## Usage
 
@@ -57,6 +66,17 @@ Open ulauncher preferences window -> extensions -> add extension and paste the f
 https://github.com/brpaz/ulauncher-docsearch
 ```
 
+## Usage
+
+Open Ulauncher and type ```docs```. A list of available documentation sites will appear. Select one and type your search keyword to search on that website.
+
+Optionally some documentation also supports a custom keyword, to trigger it directly without having to type ```docs``` before.
+
+For example, for Vue documentation, you can just type ```vue <query>```.
+
+You can see the supported keywords in [manifest.json](manifest.json) file.
+
+
 ## Development
 
 ```
@@ -72,12 +92,20 @@ To see your changes, stop ulauncher and run it from the command line with: `ulau
 
 All contributions are welcome.
 
+If you want to add new documentation, you can either do a PR so other users can benefit with it or adding it locally.
+
+Please see the following guide to know how:
+
 * [Add new documentation](docs/add-new-doc.md)
 
 
 ## Show your support
 
 <a href="https://www.buymeacoffee.com/Z1Bu6asGV" target="_blank"><img src="https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png" alt="Buy Me A Coffee" style="height: 41px !important;width: 174px !important;box-shadow: 0px 3px 2px 0px rgba(190, 190, 190, 0.5) !important;-webkit-box-shadow: 0px 3px 2px 0px rgba(190, 190, 190, 0.5) !important;" ></a>
+
+## Credits
+
+This project would never be possible without the awesome folks at [Algolia](https://www.algolia.com/) who build this search engine and all the websites that implemented it.
 
 ## License
 

@@ -4,7 +4,6 @@ This extension provides full text search on popular documentation sites, powered
 """
 import logging
 
-# pylint: disable=import-error
 from ulauncher.api.client.Extension import Extension
 from ulauncher.api.client.EventListener import EventListener
 from ulauncher.api.shared.event import KeywordQueryEvent
@@ -13,9 +12,9 @@ from ulauncher.api.shared.action.RenderResultListAction import RenderResultListA
 from ulauncher.api.shared.action.OpenUrlAction import OpenUrlAction
 from ulauncher.api.shared.action.HideWindowAction import HideWindowAction
 from ulauncher.api.shared.action.SetUserQueryAction import SetUserQueryAction
-from docs import DocSearch
+from docsearch.searcher import Searcher
 
-LOGGING = logging.getLogger(__name__)
+logger = logging.getLogger(__name__)
 
 
 class DocsearchExtension(Extension):
@@ -24,19 +23,21 @@ class DocsearchExtension(Extension):
         """ Extension constructor"""
         super(DocsearchExtension, self).__init__()
         self.subscribe(KeywordQueryEvent, KeywordQueryEventListener())
-        self.searcher = DocSearch()
+        self.searcher = Searcher()
 
-    def show_available_docs(self, event, filter_term=None):
+    def show_docsets_list(self, event, query):
         """ Displays a list of available docs """
-        docs = self.searcher.get_available_docs(filter_term)
+
+        docs = self.searcher.get_available_docs(query)
 
         items = []
 
         if not docs:
             return RenderResultListAction([
-                ExtensionResultItem(icon='images/icon.png',
-                                    name='No results found',
-                                    on_enter=HideWindowAction())
+                ExtensionResultItem(
+                    icon='images/icon.png',
+                    name='No docsets found matching your criteria',
+                    on_enter=HideWindowAction())
             ])
 
         for doc in docs[:8]:
@@ -47,9 +48,58 @@ class DocsearchExtension(Extension):
                     description=doc['description'],
                     on_alt_enter=OpenUrlAction(doc['url']),
                     on_enter=SetUserQueryAction(
-                        "%s %s > " % (event.get_keyword(), doc['key']))))
+                        "%s %s " % (event.get_keyword(), doc['key']))))
 
         return RenderResultListAction(items)
+
+    def show_docs_for_docset(self, docset, query):
+        """ Show documentation for a specific Docset """
+        if len(query.strip()) < 3:
+            return RenderResultListAction([
+                ExtensionResultItem(icon='images/icon.png',
+                                    name='please keep typing ...',
+                                    description='searching %s documentation' %
+                                    docset,
+                                    highlightable=False,
+                                    on_enter=HideWindowAction())
+            ])
+
+        results = self.searcher.search(docset, query)
+
+        items = []
+
+        if not results:
+            return RenderResultListAction([
+                ExtensionResultItem(icon='images/icon.png',
+                                    name='No results matching your criteria',
+                                    highlightable=False,
+                                    on_enter=HideWindowAction())
+            ])
+
+        for result in results[:8]:
+            items.append(
+                ExtensionResultItem(icon=result['icon'],
+                                    name=result['title'],
+                                    description=result['category'],
+                                    highlightable=False,
+                                    on_enter=OpenUrlAction(result['url'])))
+
+        return RenderResultListAction(items)
+
+    def get_docset_from_keyword(self, keyword):
+        """ Returns a docset matching the extension keyword or None if no matches found """
+        kw_id = None
+        for key, value in self.preferences.items():
+            if value == keyword:
+                kw_id = key
+                break
+
+        if kw_id:
+            kw_parts = kw_id.split("_")
+            if len(kw_parts) == 2 and kw_parts[0] == "kw":
+                return kw_parts[1]
+
+        return None
 
 
 class KeywordQueryEventListener(EventListener):
@@ -59,58 +109,20 @@ class KeywordQueryEventListener(EventListener):
     def on_event(self, event, extension):
         """ Handles the event """
 
-        arg = event.get_argument() or ""
+        query = event.get_argument() or ""
 
-        args_array = arg.split(">")
-        if len(args_array) != 2:
-            return extension.show_available_docs(event, arg)
+        kw_docset = extension.get_docset_from_keyword(event.get_keyword())
+        if kw_docset:
+            return extension.show_docs_for_docset(kw_docset, query)
 
-        try:
+        query_parts = query.split(" ")
+        docset = query_parts[0].strip()
 
-            docset = args_array[0].strip()
+        if extension.searcher.has_docset(docset):
+            term = " ".join(query_parts[1:])
+            return extension.show_docs_for_docset(docset, term)
 
-            search_term = args_array[1]
-
-            if len(search_term.strip()) < 3:
-                return RenderResultListAction([
-                    ExtensionResultItem(
-                        icon='images/icon.png',
-                        name='Please type a minimum of 3 characters',
-                        description='Searching ...',
-                        on_enter=HideWindowAction())
-                ])
-
-            result = extension.searcher.search(docset, search_term)
-
-            items = []
-
-            if not result:
-                return RenderResultListAction([
-                    ExtensionResultItem(
-                        icon='images/icon.png',
-                        name='No results matching your criteria',
-                        on_enter=HideWindowAction())
-                ])
-
-            for i in result[:8]:
-                items.append(
-                    ExtensionResultItem(icon=i['icon'],
-                                        name=i['title'],
-                                        description=i['category'],
-                                        highlightable=False,
-                                        on_enter=OpenUrlAction(i['url'])))
-
-            return RenderResultListAction(items)
-
-        except Exception as err:
-            LOGGING.error(err)
-            return RenderResultListAction([
-                ExtensionResultItem(
-                    icon="images/icon.png",
-                    name='An error ocurred when searching documentation',
-                    description='err',
-                    on_enter=HideWindowAction())
-            ])
+        return extension.show_docsets_list(event, query)
 
 
 if __name__ == '__main__':

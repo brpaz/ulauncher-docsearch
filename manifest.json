@@ -5,14 +5,68 @@
     "developer_name": "Bruno Paz",
     "icon": "images/icon.png",
     "options": {
-        "query_debounce": 0.1
+        "query_debounce": 0.2
     },
     "preferences": [
         {
             "id": "kw",
             "type": "keyword",
-            "name": "Documenation Search",
+            "name": "Documentation Search",
             "default_value": "docs"
+        },
+        {
+            "id": "kw_vue",
+            "type": "keyword",
+            "name": "Vue Documentation",
+            "default_value": "vuedocs"
+        },
+        {
+            "id": "kw_laravel",
+            "type": "keyword",
+            "name": "Laravel Docs",
+            "default_value": "laradocs"
+        },
+        {
+            "id": "kw_nuxt",
+            "type": "keyword",
+            "name": "NuxtJS Documentation",
+            "default_value": "nuxtdocs"
+        },
+        {
+            "id": "kw_gitlab",
+            "type": "keyword",
+            "name": "GitLab Documentation",
+            "default_value": "gitlabdocs"
+        },
+        {
+            "id": "kw_typescript",
+            "type": "keyword",
+            "name": "Typescript Documentation",
+            "default_value": "tsdocs"
+        },
+        {
+            "id": "kw_graphql",
+            "type": "keyword",
+            "name": "GraphQL Documnetation",
+            "default_value": "graphqldocs"
+        },
+        {
+            "id": "kw_tailwind",
+            "type": "keyword",
+            "name": "Tailwind Documnetation",
+            "default_value": "tailwinddocs"
+        },
+        {
+            "id": "kw_nestjs",
+            "type": "keyword",
+            "name": "NestJS Documnetation",
+            "default_value": "nestjsdocs"
+        },
+        {
+            "id": "kw_netlify",
+            "type": "keyword",
+            "name": "Netlify Documnetation",
+            "default_value": "netlifydocs"
         }
     ]
 }

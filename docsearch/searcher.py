@@ -11,18 +11,47 @@ DEFAULT_DOC_IMAGE = 'images/icon.png'
 
 LOGGING = logging.getLogger(__name__)
 
-DOCSETS_FILE_PATH = os.path.join(os.path.dirname(__file__), 'data',
+DOCSETS_FILE_PATH = os.path.join(os.path.dirname(__file__), '..', 'data',
                                  'docsets.json')
 
+USER_DOCSETS_PATH = os.path.join(os.path.expanduser("~"), ".config",
+                                 "ulauncher", "ext_preferences", "docsearch")
 
-class DocSearch:
+
+class Searcher:
     """ Searches Documentation On DocSearch based applications """
     def __init__(self):
         """ Class constructor """
         self.docsets = {}
 
+        self.load_default_docsets()
+        self.load_user_docsets()
+
+    def load_default_docsets(self):
+        """ Loads default docsets into memory """
         with open(DOCSETS_FILE_PATH, 'r') as data:
             self.docsets = json.load(data)
+
+    def load_user_docsets(self):
+        """ Loads custom user docsets """
+        if not os.path.isdir(USER_DOCSETS_PATH):
+            return
+
+        docsets_file = os.path.join(USER_DOCSETS_PATH, "docsets.json")
+
+        if not os.path.isfile(docsets_file):
+            return
+
+        with open(docsets_file, 'r') as data:
+            user_docsets = json.load(data)
+
+            for key, docset in user_docsets.items():
+                icon = os.path.join(USER_DOCSETS_PATH, docset["icon"])
+                if not os.path.isfile(icon):
+                    icon = "images/icon.png"
+                user_docsets[key]["icon"] = icon
+
+            self.docsets.update(user_docsets)
 
     def get_available_docs(self, filter_term):
         """ Returns a list of available docs """
@@ -49,8 +78,7 @@ class DocSearch:
 
     def get_docset(self, key):
         """ Returns the details from a docset with the specified key passed as argument """
-
-        if key in self.docsets.keys():
+        if key in self.docsets:
             return self.docsets[key]
 
         return None
@@ -66,7 +94,9 @@ class DocSearch:
                                              docset['algolia_api_key'])
 
         index = algolia_client.init_index(docset['algolia_index'])
-        search_results = index.search(term)
+
+        search_results = index.search(
+            term, self.get_search_request_options_for_docset(docset))
 
         if not search_results['hits']:
             return []
@@ -95,3 +125,21 @@ class DocSearch:
 
         # The last element found will be the description and the previous one the title.
         return res[-1], ' -> '.join(res[:-1])
+
+    def get_search_request_options_for_docset(self, docset):
+        """ Allow to specify custom search options for a specific docset """
+        opts = {}
+
+        if docset["name"] == 'Nuxt':
+            opts = {"facetFilters": ["tags:en"]}
+
+        if docset["name"] == "Bootstrap":
+            opts = {"facetFilters": ["version:4.5"]}
+
+        if docset["name"] == "Vuex":
+            opts = {"facetFilters": ["lang:en-US"]}
+
+        if docset["name"] == "Vue Router":
+            opts = {"facetFilters": ["lang:en-US"]}
+
+        return opts
