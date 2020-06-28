@@ -268,5 +268,32 @@
         "algolia_application_id": "BH4D9OD16A",
         "algolia_api_key": "9fcdb2a62af4c47cc5eecf3d5a747818",
         "url": "https://prettier.io/docs/en"
+    },
+    "prisma": {
+        "name": "Prisma",
+        "description": "An opinionated code formatter",
+        "icon": "images/docs/prisma.png",
+        "algolia_index": "prisma2-docs",
+        "algolia_application_id": "MK4LNFW4EO",
+        "algolia_api_key": "c2c66340c04baad40a878dc3a72fa273",
+        "url": "https://www.prisma.io/docs"
+    },
+    "strapi": {
+        "name": "Strapi",
+        "description": "Strapi is a flexible, open-source Headless CMS",
+        "icon": "images/docs/strapi.png",
+        "algolia_index": "strapi",
+        "algolia_application_id": "BH4D9OD16A",
+        "algolia_api_key": "a93451de224096fb34471c8b8b049de7",
+        "url": "https://strapi.io/documentation"
+    },
+    "helm": {
+        "name": "Helm",
+        "description": "Helm is the package manager for Kubernetes",
+        "icon": "images/docs/helm.png",
+        "algolia_index": "helm",
+        "algolia_application_id": "BH4D9OD16A",
+        "algolia_api_key": "8bca76b0664b04581dc9f9854e844a90",
+        "url": "https://docs.helm.sh/docs"
     }
 }

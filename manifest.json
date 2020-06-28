@@ -67,6 +67,42 @@
             "type": "keyword",
             "name": "Netlify Documnetation",
             "default_value": "netlifydocs"
+        },
+        {
+            "id": "kw_vuex",
+            "type": "keyword",
+            "name": "Vuex Documnetation",
+            "default_value": "vuexdocs"
+        },
+        {
+            "id": "kw_apollo",
+            "type": "keyword",
+            "name": "Apollo Documnetation",
+            "default_value": "apollodocs"
+        },
+        {
+            "id": "kw_eslint",
+            "type": "keyword",
+            "name": "ESLint Documnetation",
+            "default_value": "estlintdocs"
+        },
+        {
+            "id": "kw_prisma",
+            "type": "keyword",
+            "name": "Prisma Documnetation",
+            "default_value": "prismadocs"
+        },
+        {
+            "id": "kw_strapi",
+            "type": "keyword",
+            "name": "Strapi Documnetation",
+            "default_value": "strapidocs"
+        },
+        {
+            "id": "kw_helm",
+            "type": "keyword",
+            "name": "Helm Documnetation",
+            "default_value": "helmdocs"
         }
     ]
 }

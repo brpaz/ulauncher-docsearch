@@ -33,7 +33,7 @@ class Searcher:
             self.docsets = json.load(data)
 
     def load_user_docsets(self):
-        """ Loads custom user docsets """
+        """ Loads custom user docsets into memory """
         if not os.path.isdir(USER_DOCSETS_PATH):
             return
 
@@ -83,9 +83,9 @@ class Searcher:
 
         return None
 
-    def search(self, docset, term):
+    def search(self, docset_key, term):
         """ Searches a term on a specific docset and return the results """
-        docset = self.get_docset(docset)
+        docset = self.get_docset(docset_key)
 
         if not docset:
             raise ValueError("The specified docset is not known")
@@ -96,18 +96,32 @@ class Searcher:
         index = algolia_client.init_index(docset['algolia_index'])
 
         search_results = index.search(
-            term, self.get_search_request_options_for_docset(docset))
+            term, self.get_search_request_options_for_docset(docset_key))
 
         if not search_results['hits']:
             return []
 
+        return self.process_results(docset_key, docset, search_results["hits"])
+
+    def process_results(self, docset_key, docset_data, results):
+        """ Processes the results of Algolia Search """
+
         items = []
-        for hit in search_results['hits']:
-            title, description = self.parse_item_description(hit)
+        for hit in results:
+            # Prisma documentation seems to have a different format. Is it a new version of Docsearch?
+            # For now, parse Prisma differently, generalize If this format found in more places.
+            if docset_key == "prisma":
+                title = hit["title"]
+                description = hit["heading"]
+                url = docset["url"] + hit["path"]
+            else:
+                title, description = self.parse_item_description(hit)
+                url = hit['url']
+
             items.append({
-                'url': hit['url'],
+                'url': url,
                 'title': title,
-                'icon': docset['icon'],
+                'icon': docset_data['icon'],
                 'category': description
             })
 
@@ -127,19 +141,26 @@ class Searcher:
         return res[-1], ' -> '.join(res[:-1])
 
     def get_search_request_options_for_docset(self, docset):
-        """ Allow to specify custom search options for a specific docset """
+        """
+        Allow to specify custom search options for a specific docset
+        Parameters:
+            docset (string): The identifier of the docset.
+        """
         opts = {}
 
-        if docset["name"] == 'Nuxt':
+        if docset == 'nuxt':
             opts = {"facetFilters": ["tags:en"]}
 
-        if docset["name"] == "Bootstrap":
+        if docset == "bootstrap":
             opts = {"facetFilters": ["version:4.5"]}
 
-        if docset["name"] == "Vuex":
+        if docset == "vuex":
             opts = {"facetFilters": ["lang:en-US"]}
 
-        if docset["name"] == "Vue Router":
+        if docset == "vue-router":
+            opts = {"facetFilters": ["lang:en-US"]}
+
+        if docset == "strapi":
             opts = {"facetFilters": ["lang:en-US"]}
 
         return opts
