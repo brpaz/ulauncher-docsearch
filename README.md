@@ -48,10 +48,6 @@ The following documentation sites are included by default in this extension:
 -   Webpack
 
 
-## Usage
-
-![demo](demo.gif)
-
 ## Requirements
 
 - Ulauncher V5
@@ -66,7 +62,11 @@ Open ulauncher preferences window -> extensions -> add extension and paste the f
 https://github.com/brpaz/ulauncher-docsearch
 ```
 
+
 ## Usage
+
+![demo](demo.gif)
+
 
 Open Ulauncher and type ```docs```. A list of available documentation sites will appear. Select one and type your search keyword to search on that website.
 
