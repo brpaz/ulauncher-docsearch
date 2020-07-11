@@ -103,6 +103,12 @@
             "type": "keyword",
             "name": "Helm Documnetation",
             "default_value": "helmdocs"
+        },
+        {
+            "id": "kw_github",
+            "type": "keyword",
+            "name": "GitHub Documnetation",
+            "default_value": "githubdocs"
         }
     ]
 }

@@ -295,5 +295,14 @@
         "algolia_application_id": "BH4D9OD16A",
         "algolia_api_key": "8bca76b0664b04581dc9f9854e844a90",
         "url": "https://docs.helm.sh/docs"
+    },
+    "github": {
+        "name": "GitHub",
+        "description": "Helm is the package manager for Kubernetes",
+        "icon": "images/docs/github.png",
+        "algolia_index": "github-docs-dotcom-en",
+        "algolia_application_id": "ZI5KPY1HBE",
+        "algolia_api_key": "685df617246c3a10abba589b4599288f",
+        "url": "https://docs.github.com"
     }
 }

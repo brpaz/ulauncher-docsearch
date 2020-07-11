@@ -113,7 +113,11 @@ class Searcher:
             if docset_key == "prisma":
                 title = hit["title"]
                 description = hit["heading"]
-                url = docset["url"] + hit["path"]
+                url = docset_data["url"] + hit["path"]
+            elif docset_key == "github":
+                title = hit["heading"]
+                description = hit["breadcrumbs"]
+                url = hit["url"]
             else:
                 title, description = self.parse_item_description(hit)
                 url = hit['url']

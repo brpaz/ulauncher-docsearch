@@ -25,6 +25,7 @@ The following documentation sites are included by default in this extension:
 -   Echo
 -   Eslint
 -   Gatsby
+-   GitHub
 -   GitLab
 -   GORM
 -   Grafana
