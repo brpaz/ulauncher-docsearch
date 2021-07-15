@@ -22,8 +22,10 @@ The following documentation sites are included by default in this extension:
 -   Apollo GraphQL
 -   Babel
 -   Cypress
+-   Directus CMS
 -   Echo
 -   Eslint
+-   FluxCD
 -   Gatsby
 -   GitHub
 -   GitLab
@@ -50,7 +52,7 @@ The following documentation sites are included by default in this extension:
 -   Vuetify
 -   Vuex
 -   Vue-Router
--   Webpack
+-   Webpack   
 
 
 ## Requirements
@@ -104,16 +106,34 @@ Please see the following guide to know how:
 * [Add new documentation](docs/add-new-doc.md)
 
 
-## Show your support
+## 💛 Support the project
 
-<a href="https://www.buymeacoffee.com/Z1Bu6asGV" target="_blank"><img src="https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png" alt="Buy Me A Coffee" style="height: 41px !important;width: 174px !important;box-shadow: 0px 3px 2px 0px rgba(190, 190, 190, 0.5) !important;-webkit-box-shadow: 0px 3px 2px 0px rgba(190, 190, 190, 0.5) !important;" ></a>
+If this project was useful to you in some form, I would be glad to have your support.  It will help to keep the project alive and to have more time to work on Open Source.
 
+The sinplest form of support is to give a ⭐️ to this repo.
+
+You can also contribute with [GitHub Sponsors](https://github.com/sponsors/brpaz).
+
+[![GitHub Sponsors](https://img.shields.io/badge/GitHub%20Sponsors-Sponsor%20Me-red?style=for-the-badge)](https://github.com/sponsors/brpaz)
+
+
+Or if you prefer a one time donation to the project, you can simple:
+
+<a href="https://www.buymeacoffee.com/Z1Bu6asGV" target="_blank"><img src="https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png" alt="Buy Me A Coffee" style="height: auto !important;width: auto !important;" ></a>
+
+## Author
+
+👤 **Bruno Paz**
+
+* Website: [brunopaz.dev](https://brunopaz.dev)
+* Github: [@brpaz](https://github.com/brpaz)
+* Twitter: [@brunopaz88](https://twitter.com/brunopaz88)
 ## Credits
 
 This project would never be possible without the awesome folks at [Algolia](https://www.algolia.com/) who build this search engine and all the websites that implemented it.
 
 ## License
 
-Copywright @ 2019 [Bruno Paz](https://github.com/brpaz)
+Copywright [Bruno Paz](https://github.com/brpaz)
 
 This project is [MIT](LLICENSE) Licensed.

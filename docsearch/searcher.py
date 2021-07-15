@@ -96,7 +96,7 @@ class Searcher:
         index = algolia_client.init_index(docset['algolia_index'])
 
         search_results = index.search(
-            term, self.get_search_request_options_for_docset(docset_key))
+            term, self.get_search_request_options_for_docset(docset))
 
         if not search_results['hits']:
             return []
@@ -152,19 +152,8 @@ class Searcher:
         """
         opts = {}
 
-        if docset == 'nuxt':
-            opts = {"facetFilters": ["tags:en"]}
+        if "facet_filters" in docset:
+            opts = {"facetFilters": docset["facet_filters"]}
 
-        if docset == "bootstrap":
-            opts = {"facetFilters": ["version:4.5"]}
-
-        if docset == "vuex":
-            opts = {"facetFilters": ["lang:en-US"]}
-
-        if docset == "vue-router":
-            opts = {"facetFilters": ["lang:en-US"]}
-
-        if docset == "strapi":
-            opts = {"facetFilters": ["lang:en-US"]}
-
+        print(opts)
         return opts
