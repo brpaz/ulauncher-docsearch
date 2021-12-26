@@ -26,3 +26,7 @@ trim_trailing_whitespace = false
 [{Makefile,**.mk}]
 # Use tabs for indentation (Makefiles require tabs)
 indent_style = tab
+
+[*.{yml,yaml}]
+indent_style = space
+indent_size = 2
