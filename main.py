@@ -28,7 +28,7 @@ class DocsearchExtension(Extension):
     def show_docsets_list(self, event, query):
         """ Displays a list of available docs """
 
-        docs = self.searcher.get_available_docs(query)
+        docs = self.searcher.get_docsets(query)
 
         items = []
 
@@ -52,19 +52,31 @@ class DocsearchExtension(Extension):
 
         return RenderResultListAction(items)
 
-    def show_docs_for_docset(self, docset, query):
+    def search_in_docset(self, docset, query):
         """ Show documentation for a specific Docset """
         if len(query.strip()) < 3:
             return RenderResultListAction([
                 ExtensionResultItem(icon='images/icon.png',
-                                    name='please keep typing ...',
+                                    name='Please keep typing ...',
                                     description='searching %s documentation' %
                                     docset,
                                     highlightable=False,
                                     on_enter=HideWindowAction())
             ])
 
-        results = self.searcher.search(docset, query)
+        results = []
+
+        try:
+            results = self.searcher.search(docset, query)
+        except Exception as e:
+            return RenderResultListAction([
+                ExtensionResultItem(
+                    icon='images/icon.png',
+                    name='An error occurred fetching documentation',
+                    description=str(e),
+                    highlightable=False,
+                    on_enter=HideWindowAction())
+            ])
 
         items = []
 
@@ -113,14 +125,14 @@ class KeywordQueryEventListener(EventListener):
 
         kw_docset = extension.get_docset_from_keyword(event.get_keyword())
         if kw_docset:
-            return extension.show_docs_for_docset(kw_docset, query)
+            return extension.search_in_docset(kw_docset, query)
 
         query_parts = query.split(" ")
         docset = query_parts[0].strip()
 
         if extension.searcher.has_docset(docset):
             term = " ".join(query_parts[1:])
-            return extension.show_docs_for_docset(docset, term)
+            return extension.search_in_docset(docset, term)
 
         return extension.show_docsets_list(event, query)
 

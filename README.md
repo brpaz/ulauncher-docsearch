@@ -20,6 +20,7 @@ This extension allows to easily search on popular documentation websites, that i
 The following documentation sites are included by default in this extension:
 
 -   Apollo GraphQL
+-   Astro
 -   Babel
 -   Cypress
 -   Directus CMS
@@ -27,7 +28,7 @@ The following documentation sites are included by default in this extension:
 -   Eslint
 -   FluxCD
 -   Gatsby
--   GitHub
+-   GitHub (**Not working as it seems GitHub stopped using Algolia Docsearch**)
 -   GitLab
 -   GORM
 -   Grafana
@@ -45,21 +46,26 @@ The following documentation sites are included by default in this extension:
 -   React
 -   Scala
 -   Strapi
+-   Supabase
+-   Symfony
 -   Tailwind
 -   Typescript
+-   Vercel
+-   Vite
+-   VitePress
 -   Vue
 -   Vuepress
 -   Vuetify
 -   Vuex
 -   Vue-Router
--   Webpack   
+-   Webpack
 
 
 ## Requirements
 
 - Ulauncher V5
-- Python 3
-  - algoliasearch>=2.0,<3.0 (install with pip3)
+- Python packages:
+  - ```pip install --user "algoliasearch>=2.0,<3.0"```
 
 ## Install
 
@@ -79,7 +85,7 @@ Open Ulauncher and type ```docs```. A list of available documentation sites will
 
 Optionally some documentation also supports a custom keyword, to trigger it directly without having to type ```docs``` before.
 
-For example, for Vue documentation, you can just type ```vue <query>```.
+For example, for Vue documentation, you can just type ```vuedocs <query>```.
 
 You can see the supported keywords in [manifest.json](manifest.json) file.
 

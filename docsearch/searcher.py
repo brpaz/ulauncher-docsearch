@@ -5,7 +5,9 @@ Module responsible for search into docs
 import json
 import os
 import logging
+from docsearch.mapper import DefaultMapper, GitHubMapper, VercelMapper, PrismaMapper
 from algoliasearch.search_client import SearchClient
+from algoliasearch.exceptions import AlgoliaException
 
 DEFAULT_DOC_IMAGE = 'images/icon.png'
 
@@ -53,7 +55,7 @@ class Searcher:
 
             self.docsets.update(user_docsets)
 
-    def get_available_docs(self, filter_term):
+    def get_docsets(self, filter_term):
         """ Returns a list of available docs """
         docs = []
         for key, value in self.docsets.items():
@@ -76,7 +78,7 @@ class Searcher:
         """ Checks if the specified docset exists """
         return key in self.docsets
 
-    def get_docset(self, key):
+    def get_docset_by_key(self, key):
         """ Returns the details from a docset with the specified key passed as argument """
         if key in self.docsets:
             return self.docsets[key]
@@ -85,7 +87,7 @@ class Searcher:
 
     def search(self, docset_key, term):
         """ Searches a term on a specific docset and return the results """
-        docset = self.get_docset(docset_key)
+        docset = self.get_docset_by_key(docset_key)
 
         if not docset:
             raise ValueError("The specified docset is not known")
@@ -95,54 +97,42 @@ class Searcher:
 
         index = algolia_client.init_index(docset['algolia_index'])
 
-        search_results = index.search(
-            term, self.get_search_request_options_for_docset(docset))
+        try:
+            search_results = index.search(
+                term, self.get_search_request_options_for_docset(docset))
+            if not search_results['hits']:
+                return []
 
-        if not search_results['hits']:
-            return []
+            return self.map_results(docset_key, docset, search_results["hits"])
+        except AlgoliaException as e:
+            LOGGING.error("Error fetching documentation from algolia: %s", e)
+            raise e
 
-        return self.process_results(docset_key, docset, search_results["hits"])
+    def get_results_mapper(self, docset_key):
+        """
+        Returns the mapper object that will map the specified docset data into the format required by the extension
+        """
+        if docset_key == "prisma":
+            return PrismaMapper()
 
-    def process_results(self, docset_key, docset_data, results):
-        """ Processes the results of Algolia Search """
+        if docset_key == "github":
+            return GitHubMapper()
 
+        if docset_key == "vercel":
+            return VercelMapper()
+
+        return DefaultMapper()
+
+    def map_results(self, docset_key, docset_data, results):
+        """ Maps the results returned by Algolia Search """
+
+        mapper = self.get_results_mapper(docset_key)
         items = []
         for hit in results:
-            # Prisma documentation seems to have a different format. Is it a new version of Docsearch?
-            # For now, parse Prisma differently, generalize If this format found in more places.
-            if docset_key == "prisma":
-                title = hit["title"]
-                description = hit["heading"]
-                url = docset_data["url"] + hit["path"]
-            elif docset_key == "github":
-                title = hit["heading"]
-                description = hit["breadcrumbs"]
-                url = hit["url"]
-            else:
-                title, description = self.parse_item_description(hit)
-                url = hit['url']
-
-            items.append({
-                'url': url,
-                'title': title,
-                'icon': docset_data['icon'],
-                'category': description
-            })
+            mapped_item = mapper.map(docset_data, hit)
+            items.append(mapped_item)
 
         return items
-
-    def parse_item_description(self, hit):
-        """ Returns the text to display as result item title """
-        hierarchy = hit['hierarchy'].values()
-
-        # Filter the list by removing the empty values
-        res = [i for i in hierarchy if i]
-
-        if len(res) < 2:
-            return res[0], ""
-
-        # The last element found will be the description and the previous one the title.
-        return res[-1], ' -> '.join(res[:-1])
 
     def get_search_request_options_for_docset(self, docset):
         """
@@ -155,5 +145,4 @@ class Searcher:
         if "facet_filters" in docset:
             opts = {"facetFilters": docset["facet_filters"]}
 
-        print(opts)
         return opts

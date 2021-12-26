@@ -51,10 +51,13 @@
         "name": "Jest",
         "description": "Jest is a delightful JavaScript Testing Framework with a focus on simplicity.",
         "icon": "images/docs/jest.png",
-        "algolia_index": "tailwindcss",
+        "algolia_index": "jest",
         "algolia_application_id": "BH4D9OD16A",
         "algolia_api_key": "833906d7486e4059359fa58823c4ef56",
-        "url": "https://jestjs.io/docs/en/getting-started"
+        "url": "https://jestjs.io/docs/en/getting-started",
+        "facet_filters": [
+            "language:en"
+        ]
     },
     "nuxt": {
         "name": "Nuxt",
@@ -317,7 +320,7 @@
     },
     "github": {
         "name": "GitHub",
-        "description": "Helm is the package manager for Kubernetes",
+        "description": "GitHub is where over 73 million developers shape the future of software, together.",
         "icon": "images/docs/github.png",
         "algolia_index": "github-docs-dotcom-en",
         "algolia_application_id": "ZI5KPY1HBE",
@@ -346,6 +349,103 @@
         "url": "https://fluxcd.io/",
         "facet_filters": [
             "tags:current"
+        ]
+    },
+    "astro": {
+        "name": "Astro",
+        "description": "Astro is a modern static site builder.",
+        "icon": "images/docs/astro.png",
+        "algolia_index": "astro",
+        "algolia_application_id": "BH4D9OD16A",
+        "algolia_api_key": "0f387260ad74f9cbf4353facd29c919c",
+        "url": "https://docs.astro.build/",
+        "facet_filters": []
+    },
+    "vercel": {
+        "name": "Vercel",
+        "description": "Vercel is a platform for frontend frameworks and static sites, built to integrate with your headless content, commerce, or database.",
+        "icon": "images/docs/vercel.png",
+        "algolia_index": "knowledge_production",
+        "algolia_application_id": "NNTAHQI9C5",
+        "algolia_api_key": "ac5d89f9877f9fb09dbdc9a010cca761",
+        "url": "https://vercel.com/",
+        "facet_filters": []
+    },
+    "supbase": {
+        "name": "Supabase",
+        "description": "Supabase is an open source Firebase alternative.",
+        "icon": "images/docs/supabase.png",
+        "algolia_index": "supabase",
+        "algolia_application_id": "BH4D9OD16A",
+        "algolia_api_key": "766d56f13dd1e82f4325355",
+        "url": "https://supabase.com/docs",
+        "facet_filters": []
+    },
+    "nuxt3": {
+        "name": "Nuxt3",
+        "description": "The Hybrid Vue Framework",
+        "icon": "images/docs/nuxtjs.png",
+        "algolia_index": "nuxtjs",
+        "algolia_application_id": "1V8G7N9GF0",
+        "algolia_api_key": "60a01900a4b726d667eab75b6f337592",
+        "url": "https://v3.nuxtjs.org/docs",
+        "facet_filters": [
+            "language:en-US",
+            "tags:v3"
+        ]
+    },
+    "vite": {
+        "name": "Vite",
+        "description": "Next Generation Frontend Tooling",
+        "icon": "images/docs/vite.svg",
+        "algolia_index": "vitejs",
+        "algolia_application_id": "BH4D9OD16A",
+        "algolia_api_key": "b573aa848fd57fb47d693b531297403c",
+        "url": "https://v3.nuxtjs.org/docs",
+        "facet_filters": [
+            "tags:en"
+        ]
+    },
+    "vitepress": {
+        "name": "VitePress",
+        "description": "Documentation site generator using Vite and Vue",
+        "icon": "images/docs/vitepress.svg",
+        "algolia_index": "vitepress",
+        "algolia_application_id": "8J64VVRP8K",
+        "algolia_api_key": "a18e2f4cc5665f6602c5631fd868adfd",
+        "url": "https://vitepress.vuejs.org/",
+        "facet_filters": []
+    },
+    "pinia": {
+        "name": "Pinia",
+        "description": "The Vue Store that you will enjoy using",
+        "icon": "images/docs/pinia.svg",
+        "algolia_index": "pinia",
+        "algolia_application_id": "69Y3N7LHI2",
+        "algolia_api_key": "45441f4b65a2f80329fd45c7cb371fea",
+        "url": "https://pinia.vuejs.org/",
+        "facet_filters": []
+    },
+    "cloudflare": {
+        "name": "Cloudflare",
+        "description": "Use Cloudflare’s API and edge network",
+        "icon": "images/docs/cloudflare.png",
+        "algolia_index": "developers-cloudflare",
+        "algolia_application_id": "BH4D9OD16A",
+        "algolia_api_key": "b23088ab4d346409f9d3ece6606344c3",
+        "url": "https://developers.cloudflare.com/",
+        "facet_filters": []
+    },
+    "symfony": {
+        "name": "Symfony",
+        "description": "Use Cloudflare’s API and edge network",
+        "icon": "images/docs/symfony.png",
+        "algolia_index": "symfony",
+        "algolia_application_id": "BH4D9OD16A",
+        "algolia_api_key": "1a246c2737d8e8c38198dd7ea530d123",
+        "url": "https://symfony.com",
+        "facet_filters": [
+            "version:current"
         ]
     }
 }
