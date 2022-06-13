@@ -22,7 +22,7 @@ def gen_keywords():
             "id": "kw_%s" % key,
             "type": "keyword",
             "name": "%s Documentation" % docset["name"],
-            "default_value": "%sdocs" % key,
+            "default_value": "docs:%s" % key,
             "icon": docset["icon"]
         })
 

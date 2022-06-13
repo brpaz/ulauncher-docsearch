@@ -18,315 +18,322 @@
             "id": "kw_react",
             "type": "keyword",
             "name": "React Documentation",
-            "default_value": "reactdocs",
+            "default_value": "docs:react",
             "icon": "images/docs/react.png"
         },
         {
             "id": "kw_vue",
             "type": "keyword",
             "name": "VueJS Documentation",
-            "default_value": "vuedocs",
+            "default_value": "docs:vue",
             "icon": "images/docs/vue.png"
         },
         {
             "id": "kw_gitlab",
             "type": "keyword",
             "name": "GitLab Documentation",
-            "default_value": "gitlabdocs",
+            "default_value": "docs:gitlab",
             "icon": "images/docs/gitlab.png"
         },
         {
             "id": "kw_cypress",
             "type": "keyword",
             "name": "Cypress Documentation",
-            "default_value": "cypressdocs",
+            "default_value": "docs:cypress",
             "icon": "images/docs/cypress.png"
         },
         {
-            "id": "kw_tailwind",
+            "id": "kw_tailwindv2",
             "type": "keyword",
-            "name": "Tailwind Documentation",
-            "default_value": "tailwinddocs",
+            "name": "Tailwind (V2) Documentation",
+            "default_value": "docs:tailwindv2",
+            "icon": "images/docs/tailwind.png"
+        },
+        {
+            "id": "kw_tailwindv3",
+            "type": "keyword",
+            "name": "Tailwind (V3) Documentation",
+            "default_value": "docs:tailwindv3",
             "icon": "images/docs/tailwind.png"
         },
         {
             "id": "kw_jest",
             "type": "keyword",
             "name": "Jest Documentation",
-            "default_value": "jestdocs",
+            "default_value": "docs:jest",
             "icon": "images/docs/jest.png"
         },
         {
             "id": "kw_nuxt",
             "type": "keyword",
             "name": "Nuxt Documentation",
-            "default_value": "nuxtdocs",
+            "default_value": "docs:nuxt",
             "icon": "images/docs/nuxtjs.png"
         },
         {
             "id": "kw_vuepress",
             "type": "keyword",
             "name": "Vuepress Documentation",
-            "default_value": "vuepressdocs",
+            "default_value": "docs:vuepress",
             "icon": "images/docs/vuepress.png"
         },
         {
             "id": "kw_gatsby",
             "type": "keyword",
             "name": "Gatbsy Documentation",
-            "default_value": "gatsbydocs",
+            "default_value": "docs:gatsby",
             "icon": "images/docs/gatsby.png"
         },
         {
             "id": "kw_typescript",
             "type": "keyword",
             "name": "Typescript Documentation",
-            "default_value": "typescriptdocs",
+            "default_value": "docs:typescript",
             "icon": "images/docs/typescript.png"
         },
         {
             "id": "kw_echo",
             "type": "keyword",
             "name": "Echo Documentation",
-            "default_value": "echodocs",
+            "default_value": "docs:echo",
             "icon": "images/docs/echo.png"
         },
         {
             "id": "kw_gridsome",
             "type": "keyword",
             "name": "Gridsome Documentation",
-            "default_value": "gridsomedocs",
+            "default_value": "docs:gridsome",
             "icon": "images/docs/gridsome.png"
         },
         {
             "id": "kw_graphql",
             "type": "keyword",
             "name": "GraphQL Documentation",
-            "default_value": "graphqldocs",
+            "default_value": "docs:graphql",
             "icon": "images/docs/graphql.png"
         },
         {
             "id": "kw_eslint",
             "type": "keyword",
             "name": "ESLint Documentation",
-            "default_value": "eslintdocs",
+            "default_value": "docs:eslint",
             "icon": "images/docs/eslint.png"
         },
         {
             "id": "kw_scala",
             "type": "keyword",
             "name": "Scala Documentation",
-            "default_value": "scaladocs",
+            "default_value": "docs:scala",
             "icon": "images/docs/scala.png"
         },
         {
             "id": "kw_webpack",
             "type": "keyword",
             "name": "Webpack Documentation",
-            "default_value": "webpackdocs",
+            "default_value": "docs:webpack",
             "icon": "images/docs/webpack.png"
         },
         {
             "id": "kw_apollo",
             "type": "keyword",
             "name": "Apollo GraphQL Documentation",
-            "default_value": "apollodocs",
+            "default_value": "docs:apollo",
             "icon": "images/docs/apollo.png"
         },
         {
             "id": "kw_vuetify",
             "type": "keyword",
             "name": "vuetify Documentation",
-            "default_value": "vuetifydocs",
+            "default_value": "docs:vuetify",
             "icon": "images/docs/vuetify.png"
         },
         {
             "id": "kw_vuex",
             "type": "keyword",
             "name": "Vuex Documentation",
-            "default_value": "vuexdocs",
+            "default_value": "docs:vuex",
             "icon": "images/docs/vuex.png"
         },
         {
             "id": "kw_vue-router",
             "type": "keyword",
             "name": "Vue Router Documentation",
-            "default_value": "vue-routerdocs",
+            "default_value": "docs:vue-router",
             "icon": "images/docs/vue.png"
         },
         {
             "id": "kw_parcel",
             "type": "keyword",
             "name": "parcel Documentation",
-            "default_value": "parceldocs",
+            "default_value": "docs:parcel",
             "icon": "images/docs/parcel.png"
         },
         {
             "id": "kw_laravel",
             "type": "keyword",
             "name": "Laravel Documentation",
-            "default_value": "laraveldocs",
+            "default_value": "docs:laravel",
             "icon": "images/docs/laravel.png"
         },
         {
             "id": "kw_nestjs",
             "type": "keyword",
             "name": "NestJS Documentation",
-            "default_value": "nestjsdocs",
+            "default_value": "docs:nestjs",
             "icon": "images/docs/nestjs.png"
         },
         {
             "id": "kw_bootstrap",
             "type": "keyword",
             "name": "Bootstrap Documentation",
-            "default_value": "bootstrapdocs",
+            "default_value": "docs:bootstrap",
             "icon": "images/docs/bootstrap.png"
         },
         {
             "id": "kw_netlify",
             "type": "keyword",
             "name": "Netlify Documentation",
-            "default_value": "netlifydocs",
+            "default_value": "docs:netlify",
             "icon": "images/docs/netlify.png"
         },
         {
             "id": "kw_babel",
             "type": "keyword",
             "name": "Babel Documentation",
-            "default_value": "babeldocs",
+            "default_value": "docs:babel",
             "icon": "images/docs/babeljs.png"
         },
         {
             "id": "kw_gorm",
             "type": "keyword",
             "name": "Gorm Documentation",
-            "default_value": "gormdocs",
+            "default_value": "docs:gorm",
             "icon": "images/docs/gorm.png"
         },
         {
             "id": "kw_grafana",
             "type": "keyword",
             "name": "Grafana Documentation",
-            "default_value": "grafanadocs",
+            "default_value": "docs:grafana",
             "icon": "images/docs/grafana.png"
         },
         {
             "id": "kw_prometheus",
             "type": "keyword",
             "name": "Prometheus Documentation",
-            "default_value": "prometheusdocs",
+            "default_value": "docs:prometheus",
             "icon": "images/docs/prometheus.png"
         },
         {
             "id": "kw_prettier",
             "type": "keyword",
             "name": "Prettier Documentation",
-            "default_value": "prettierdocs",
+            "default_value": "docs:prettier",
             "icon": "images/docs/prettier.png"
         },
         {
             "id": "kw_prisma",
             "type": "keyword",
             "name": "Prisma Documentation",
-            "default_value": "prismadocs",
+            "default_value": "docs:prisma",
             "icon": "images/docs/prisma.png"
         },
         {
             "id": "kw_strapi",
             "type": "keyword",
             "name": "Strapi Documentation",
-            "default_value": "strapidocs",
+            "default_value": "docs:strapi",
             "icon": "images/docs/strapi.png"
         },
         {
             "id": "kw_helm",
             "type": "keyword",
             "name": "Helm Documentation",
-            "default_value": "helmdocs",
+            "default_value": "docs:helm",
             "icon": "images/docs/helm.png"
         },
         {
             "id": "kw_github",
             "type": "keyword",
             "name": "GitHub Documentation",
-            "default_value": "githubdocs",
+            "default_value": "docs:github",
             "icon": "images/docs/github.png"
         },
         {
             "id": "kw_directus",
             "type": "keyword",
             "name": "Directus Documentation",
-            "default_value": "directusdocs",
+            "default_value": "docs:directus",
             "icon": "images/docs/directus.png"
         },
         {
             "id": "kw_flux",
             "type": "keyword",
             "name": "FluxCD Documentation",
-            "default_value": "fluxdocs",
+            "default_value": "docs:flux",
             "icon": "images/docs/flux.png"
         },
         {
             "id": "kw_astro",
             "type": "keyword",
             "name": "Astro Documentation",
-            "default_value": "astrodocs",
+            "default_value": "docs:astro",
             "icon": "images/docs/astro.png"
         },
         {
             "id": "kw_vercel",
             "type": "keyword",
             "name": "Vercel Documentation",
-            "default_value": "verceldocs",
+            "default_value": "docs:vercel",
             "icon": "images/docs/vercel.png"
         },
         {
             "id": "kw_supbase",
             "type": "keyword",
             "name": "Supabase Documentation",
-            "default_value": "supbasedocs",
+            "default_value": "docs:supbase",
             "icon": "images/docs/supabase.png"
         },
         {
             "id": "kw_nuxt3",
             "type": "keyword",
             "name": "Nuxt3 Documentation",
-            "default_value": "nuxt3docs",
+            "default_value": "docs:nuxt3",
             "icon": "images/docs/nuxtjs.png"
         },
         {
             "id": "kw_vite",
             "type": "keyword",
             "name": "Vite Documentation",
-            "default_value": "vitedocs",
+            "default_value": "docs:vite",
             "icon": "images/docs/vite.svg"
         },
         {
             "id": "kw_vitepress",
             "type": "keyword",
             "name": "VitePress Documentation",
-            "default_value": "vitepressdocs",
+            "default_value": "docs:vitepress",
             "icon": "images/docs/vitepress.svg"
         },
         {
             "id": "kw_pinia",
             "type": "keyword",
             "name": "Pinia Documentation",
-            "default_value": "piniadocs",
+            "default_value": "docs:pinia",
             "icon": "images/docs/pinia.svg"
         },
         {
             "id": "kw_cloudflare",
             "type": "keyword",
             "name": "Cloudflare Documentation",
-            "default_value": "cloudflaredocs",
+            "default_value": "docs:cloudflare",
             "icon": "images/docs/cloudflare.png"
         },
         {
             "id": "kw_symfony",
             "type": "keyword",
             "name": "Symfony Documentation",
-            "default_value": "symfonydocs",
+            "default_value": "docs:symfony",
             "icon": "images/docs/symfony.png"
         }
     ]

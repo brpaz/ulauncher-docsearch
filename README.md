@@ -143,3 +143,5 @@ This project would never be possible without the awesome folks at [Algolia](http
 Copywright [Bruno Paz](https://github.com/brpaz)
 
 This project is [MIT](LLICENSE) Licensed.
+
+<a href="https://www.flaticon.com/free-icons/guideline" title="guideline icons">Guideline icons created by Andrean Prabowo - Flaticon</a>

@@ -35,8 +35,8 @@
         "algolia_api_key": "8e6c3119ee78db1ad10cd7bfb439d726",
         "url": "https://docs.cypress.io/"
     },
-    "tailwind": {
-        "name": "Tailwind",
+    "tailwindv2": {
+        "name": "Tailwind (V2)",
         "description": "the Progressive JavaScript Framework",
         "icon": "images/docs/tailwind.png",
         "algolia_index": "tailwindcss",
@@ -45,6 +45,18 @@
         "url": "https://tailwindcss.com/docs/installation/",
         "facet_filters": [
             "version:v2"
+        ]
+    },
+    "tailwindv3": {
+        "name": "Tailwind (V3)",
+        "description": "the Progressive JavaScript Framework",
+        "icon": "images/docs/tailwind.png",
+        "algolia_index": "tailwindcss",
+        "algolia_application_id": "KNPXZI5B0M",
+        "algolia_api_key": "5fc87cef58bb80203d2207578309fab6",
+        "url": "https://tailwindcss.com/docs/installation/",
+        "facet_filters": [
+            "version:v3"
         ]
     },
     "jest": {

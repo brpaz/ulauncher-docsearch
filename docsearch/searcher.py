@@ -22,6 +22,7 @@ USER_DOCSETS_PATH = os.path.join(os.path.expanduser("~"), ".config",
 
 class Searcher:
     """ Searches Documentation On DocSearch based applications """
+
     def __init__(self):
         """ Class constructor """
         self.docsets = {}
@@ -100,6 +101,7 @@ class Searcher:
         try:
             search_results = index.search(
                 term, self.get_search_request_options_for_docset(docset))
+            print(search_results)
             if not search_results['hits']:
                 return []
 
