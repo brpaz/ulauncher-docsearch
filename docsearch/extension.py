@@ -1,7 +1,6 @@
 import logging
 
 from ulauncher.api.client.Extension import Extension
-from ulauncher.api.client.EventListener import EventListener
 from ulauncher.api.shared.event import KeywordQueryEvent
 from ulauncher.api.shared.item.ExtensionResultItem import ExtensionResultItem
 from ulauncher.api.shared.action.RenderResultListAction import RenderResultListAction
@@ -23,7 +22,7 @@ class DocsearchExtension(Extension):
         self.subscribe(KeywordQueryEvent, KeywordQueryEventListener())
         self.searcher = Searcher()
 
-    def show_docsets_list(self, event, query):
+    def list_docsets(self, event, query):
         """ Displays a list of available docs """
 
         docs = self.searcher.get_docsets(query)
