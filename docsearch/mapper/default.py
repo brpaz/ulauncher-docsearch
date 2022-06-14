@@ -2,8 +2,13 @@
 
 
 class DefaultMapper():
+
+    def get_type(self):
+        return "default"
+
     def map(self, docset, hit):
 
+        print(hit)
         title, description = self.map_description(hit)
 
         if not description:

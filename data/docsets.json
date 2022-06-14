@@ -330,15 +330,6 @@
         "algolia_api_key": "8bca76b0664b04581dc9f9854e844a90",
         "url": "https://docs.helm.sh/docs"
     },
-    "github": {
-        "name": "GitHub",
-        "description": "GitHub is where over 73 million developers shape the future of software, together.",
-        "icon": "images/docs/github.png",
-        "algolia_index": "github-docs-dotcom-en",
-        "algolia_application_id": "ZI5KPY1HBE",
-        "algolia_api_key": "685df617246c3a10abba589b4599288f",
-        "url": "https://docs.github.com"
-    },
     "directus": {
         "name": "Directus",
         "description": "Directus is an open-source Headless CMS with the flexibility and power of a Data API",
@@ -379,7 +370,7 @@
         "icon": "images/docs/vercel.png",
         "algolia_index": "knowledge_production",
         "algolia_application_id": "NNTAHQI9C5",
-        "algolia_api_key": "ac5d89f9877f9fb09dbdc9a010cca761",
+        "algolia_api_key": "35b6e34b44ca4bcf530d0c4198f58fd8",
         "url": "https://vercel.com/",
         "facet_filters": []
     },
@@ -458,6 +449,28 @@
         "url": "https://symfony.com",
         "facet_filters": [
             "version:current"
+        ]
+    },
+    "terraform": {
+        "name": "Terraform",
+        "description": "Terraform codifies cloud APIs into declarative configuration files.",
+        "icon": "images/docs/terraform.png",
+        "algolia_index": "product_TERRAFORM",
+        "algolia_application_id": "YY0FFNI7MF",
+        "algolia_api_key": "49e670100103ee846816a4b1a577004e",
+        "url": "https://www.terraform.io/docs",
+        "facet_filters": []
+    },
+    "webdev": {
+        "name": "Web.dev",
+        "description": "Take advantage of the latest modern technologies to build amazing web experiences for everyone.",
+        "icon": "images/docs/webdev.png",
+        "algolia_index": "prod_web_dev",
+        "algolia_application_id": "2JPAZHQ6K7",
+        "algolia_api_key": "ac32acde5503ed0ab18332e0592e9919",
+        "url": "https://web.dev/",
+        "facet_filters": [
+            "locales:en"
         ]
     }
 }

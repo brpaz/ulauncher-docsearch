@@ -21,4 +21,4 @@ class KeywordQueryEventListener(EventListener):
             term = " ".join(query_parts[1:])
             return extension.search_in_docset(docset, term)
 
-        return extension.show_docsets_list(event, query)
+        return extension.list_docsets(event, query)

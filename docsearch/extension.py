@@ -66,6 +66,7 @@ class DocsearchExtension(Extension):
         try:
             results = self.searcher.search(docset, query)
         except Exception as e:
+            logger.error(e)
             return RenderResultListAction([
                 ExtensionResultItem(
                     icon='images/icon.png',

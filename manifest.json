@@ -253,13 +253,6 @@
             "icon": "images/docs/helm.png"
         },
         {
-            "id": "kw_github",
-            "type": "keyword",
-            "name": "GitHub Documentation",
-            "default_value": "docs:github",
-            "icon": "images/docs/github.png"
-        },
-        {
             "id": "kw_directus",
             "type": "keyword",
             "name": "Directus Documentation",
@@ -335,6 +328,20 @@
             "name": "Symfony Documentation",
             "default_value": "docs:symfony",
             "icon": "images/docs/symfony.png"
+        },
+        {
+            "id": "kw_terraform",
+            "type": "keyword",
+            "name": "Terraform Documentation",
+            "default_value": "docs:terraform",
+            "icon": "images/docs/terraform.png"
+        },
+        {
+            "id": "kw_webdev",
+            "type": "keyword",
+            "name": "Web.dev Documentation",
+            "default_value": "docs:webdev",
+            "icon": "images/docs/webdev.png"
         }
     ]
 }

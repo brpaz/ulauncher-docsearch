@@ -5,7 +5,7 @@ Module responsible for search into docs
 import json
 import os
 import logging
-from docsearch.mapper import DefaultMapper, GitHubMapper, VercelMapper, PrismaMapper
+from docsearch.mapper import DefaultMapper, VercelMapper, PrismaMapper, TerraformMapper, WebDevMapper
 from algoliasearch.search_client import SearchClient
 from algoliasearch.exceptions import AlgoliaException
 
@@ -29,6 +29,12 @@ class Searcher:
 
         self.load_default_docsets()
         self.load_user_docsets()
+        self.results_mappers = [
+            VercelMapper(),
+            TerraformMapper(),
+            PrismaMapper(),
+            WebDevMapper()
+        ]
 
     def load_default_docsets(self):
         """ Loads default docsets into memory """
@@ -101,7 +107,7 @@ class Searcher:
         try:
             search_results = index.search(
                 term, self.get_search_request_options_for_docset(docset))
-            print(search_results)
+
             if not search_results['hits']:
                 return []
 
@@ -114,14 +120,9 @@ class Searcher:
         """
         Returns the mapper object that will map the specified docset data into the format required by the extension
         """
-        if docset_key == "prisma":
-            return PrismaMapper()
-
-        if docset_key == "github":
-            return GitHubMapper()
-
-        if docset_key == "vercel":
-            return VercelMapper()
+        for mapper in self.results_mappers:
+            if mapper.get_type() == docset_key:
+                return mapper
 
         return DefaultMapper()
 

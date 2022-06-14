@@ -28,7 +28,6 @@ The following documentation sites are included by default in this extension:
 -   Eslint
 -   FluxCD
 -   Gatsby
--   GitHub (**Not working as it seems GitHub stopped using Algolia Docsearch**)
 -   GitLab
 -   GORM
 -   Grafana
@@ -49,6 +48,7 @@ The following documentation sites are included by default in this extension:
 -   Supabase
 -   Symfony
 -   Tailwind
+-   Terraform
 -   Typescript
 -   Vercel
 -   Vite
@@ -59,6 +59,7 @@ The following documentation sites are included by default in this extension:
 -   Vuex
 -   Vue-Router
 -   Webpack
+-   Web.dev
 
 
 ## Requirements
