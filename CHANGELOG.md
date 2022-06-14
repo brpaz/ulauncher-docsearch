@@ -1,3 +1,10 @@
+# [1.1.0](https://github.com/brpaz/ulauncher-docsearch/compare/v1.0.0...v1.1.0) (2022-06-14)
+
+
+### Features
+
+* add documentation for Terraform and Web.dev and remove old GitHub documenation. ([6ddfbbe](https://github.com/brpaz/ulauncher-docsearch/commit/6ddfbbecb339d913235e9b171cfa9d9b636e58e8))
+
 # 1.0.0 (2022-06-13)
 
 
