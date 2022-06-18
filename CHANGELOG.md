@@ -1,3 +1,10 @@
+# [1.2.0](https://github.com/brpaz/ulauncher-docsearch/compare/v1.1.0...v1.2.0) (2022-06-18)
+
+
+### Features
+
+* Add support for documnetation sites powered by mkdocs ([#9](https://github.com/brpaz/ulauncher-docsearch/issues/9)) ([5bcc7ec](https://github.com/brpaz/ulauncher-docsearch/commit/5bcc7ec35230b7deb03ae4b950234f9e9d77d35b))
+
 # [1.1.0](https://github.com/brpaz/ulauncher-docsearch/compare/v1.0.0...v1.1.0) (2022-06-14)
 
 
