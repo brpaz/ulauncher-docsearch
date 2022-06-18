@@ -342,6 +342,34 @@
             "name": "Web.dev Documentation",
             "default_value": "docs:webdev",
             "icon": "images/docs/webdev.png"
+        },
+        {
+            "id": "kw_backstage",
+            "type": "keyword",
+            "name": "Backstage Documentation",
+            "default_value": "docs:backstage",
+            "icon": "images/docs/backstage.png"
+        },
+        {
+            "id": "kw_nginx-ingress",
+            "type": "keyword",
+            "name": "Nginx Ingress Documentation",
+            "default_value": "docs:nginx-ingress",
+            "icon": "images/docs/nginx.png"
+        },
+        {
+            "id": "kw_dataview",
+            "type": "keyword",
+            "name": "Obsidian Dataview documentation",
+            "default_value": "docs:dataview",
+            "icon": "images/docs/dataview.png"
+        },
+        {
+            "id": "kw_argo",
+            "type": "keyword",
+            "name": "ArgoCD Documentation",
+            "default_value": "docs:argocd",
+            "icon": "images/docs/argocd.png"
         }
     ]
 }

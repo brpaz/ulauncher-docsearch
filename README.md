@@ -1,6 +1,6 @@
 # ulauncher-docsearch
 
-> Full text search on Documentation sites, powered by [Algolia](https://www.algolia.com/) Docsearch.
+> Search in your favorite Documentation sites directly from Ulauncher.
 
 [![Ulauncher Extension](https://img.shields.io/badge/Ulauncher-Extension-green.svg?style=for-the-badge)](https://ext.ulauncher.io/-/github-brpaz-ulauncher-docsearch)
 ![License](https://img.shields.io/github/license/brpaz/ulauncher-docsearch.svg?style=for-the-badge)
@@ -15,7 +15,7 @@ This extension, aims to make documentation search less painfull, allowing you to
 
 ## Features
 
-This extension allows to easily search on popular documentation websites, that implements [Algolia DocSearch](https://community.algolia.com/docsearch/).
+This extension allows to easily search on popular documentation websites, that are built using [Algolia DocSearch](https://community.algolia.com/docsearch/) or [MkDocs](https://www.mkdocs.org/).
 
 The following documentation sites are included by default in this extension:
 
@@ -61,6 +61,11 @@ The following documentation sites are included by default in this extension:
 -   Webpack
 -   Web.dev
 
+It also includes the following using MkDocs:
+
+- Obsidian Dataview
+- Nginx ingress controller
+- ArgoCD
 
 ## Requirements
 
@@ -86,9 +91,9 @@ Open Ulauncher and type ```docs```. A list of available documentation sites will
 
 Optionally some documentation also supports a custom keyword, to trigger it directly without having to type ```docs``` before.
 
-For example, for Vue documentation, you can just type ```vuedocs <query>```.
+For example, for Vue documentation, you can just type ```docs:vue <query>```.
 
-You can see the supported keywords in [manifest.json](manifest.json) file.
+You can see the available keywords in [manifest.json](manifest.json) file.
 
 
 ## Development
