@@ -11,7 +11,7 @@ from docsearch.listeners.query_listener import KeywordQueryEventListener
 from docsearch.searcher import Searcher
 from threading import Thread, Timer
 from docsearch.indexers.mkdocs import MkDocsIndexer
-from docsearch.searcher import DOCS_PROVIDER_MKDOCS
+from docsearch.providers.constants import PROVIDER_ALGOLIA_DOCSEARCH, PROVIDER_MKDOCS
 
 logger = logging.getLogger(__name__)
 
@@ -35,7 +35,7 @@ class DocsearchExtension(Extension):
     def index_mkdocs(self):
 
         docsets_to_index = self.searcher.get_docsets_by_provider(
-            DOCS_PROVIDER_MKDOCS)
+            PROVIDER_MKDOCS)
 
         for key, doc in docsets_to_index.items():
             try:

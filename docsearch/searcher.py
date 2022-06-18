@@ -6,7 +6,6 @@ import json
 import os
 import logging
 
-from docsearch.providers.constants import PROVIDER_MKDOCS, PROVIDER_ALGOLIA_DOCSEARCH
 from docsearch.providers.factory import ProviderFactory
 
 DEFAULT_DOC_IMAGE = 'images/icon.png'

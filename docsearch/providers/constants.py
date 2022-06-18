@@ -1,0 +1,2 @@
+PROVIDER_ALGOLIA_DOCSEARCH = "algolia"
+PROVIDER_MKDOCS = "mkdocs"
