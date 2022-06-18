@@ -342,6 +342,20 @@
             "name": "Web.dev Documentation",
             "default_value": "docs:webdev",
             "icon": "images/docs/webdev.png"
+        },
+        {
+            "id": "kw_backstage",
+            "type": "keyword",
+            "name": "Backstage Documentation",
+            "default_value": "docs:backstage",
+            "icon": "images/docs/backstage.png"
+        },
+        {
+            "id": "kw_nginx-ingress",
+            "type": "keyword",
+            "name": "Nginx Ingress Documentation",
+            "default_value": "docs:nginx-ingress",
+            "icon": "images/docs/nginx.png"
         }
     ]
 }

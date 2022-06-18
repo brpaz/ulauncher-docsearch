@@ -5,7 +5,9 @@ Module responsible for search into docs
 import json
 import os
 import logging
+import functools
 from docsearch.mapper import DefaultMapper, VercelMapper, PrismaMapper, TerraformMapper, WebDevMapper
+from docsearch.indexers.mkdocs import CACHE_FOLDER_PATH
 from algoliasearch.search_client import SearchClient
 from algoliasearch.exceptions import AlgoliaException
 
@@ -19,12 +21,14 @@ DOCSETS_FILE_PATH = os.path.join(os.path.dirname(__file__), '..', 'data',
 USER_DOCSETS_PATH = os.path.join(os.path.expanduser("~"), ".config",
                                  "ulauncher", "ext_preferences", "docsearch")
 
+DOCS_PROVIDER_ALGOLIA_DOCSEARCH = "algolia"
+DOCS_PROVIDER_MKDOCS = "mkdocs"
+
 
 class Searcher:
-    """ Searches Documentation On DocSearch based applications """
+    """ Class that handles the documentation search """
 
     def __init__(self):
-        """ Class constructor """
         self.docsets = {}
 
         self.load_default_docsets()
@@ -99,6 +103,18 @@ class Searcher:
         if not docset:
             raise ValueError("The specified docset is not known")
 
+        if "provider" not in docset:
+            raise ValueError(
+                "Your docset configuration is missing provider option")
+
+        if docset["provider"] == DOCS_PROVIDER_ALGOLIA_DOCSEARCH:
+            return self.search_on_aloglia(docset_key, docset, term)
+        elif docset["provider"] == DOCS_PROVIDER_MKDOCS:
+            return self.search_on_mkdocs(docset_key, docset, term)
+
+        return []
+
+    def search_on_aloglia(self, docset_key, docset, term):
         algolia_client = SearchClient.create(docset['algolia_application_id'],
                                              docset['algolia_api_key'])
 
@@ -115,6 +131,32 @@ class Searcher:
         except AlgoliaException as e:
             LOGGING.error("Error fetching documentation from algolia: %s", e)
             raise e
+
+    def search_on_mkdocs(self, docset_key, docset, query):
+
+        data = self.read_mkdocs_index_file(docset_key)
+
+        results = []
+        for item in data:
+            if query.lower() in item["title"].lower():
+                results.append({
+                    'url':
+                    "{}/{}".format(docset["url"], item["description"]),
+                    'title':
+                    item["title"],
+                    'icon':
+                    docset['icon'],
+                    'category':
+                    item['description'],
+                })
+
+        return results
+
+    @functools.lru_cache(maxsize=10)
+    def read_mkdocs_index_file(self, docset_key):
+        file_path = os.path.join(CACHE_FOLDER_PATH, "%s.json" % docset_key)
+        with open(file_path) as f:
+            return json.load(f)
 
     def get_results_mapper(self, docset_key):
         """
@@ -149,3 +191,11 @@ class Searcher:
             opts = {"facetFilters": docset["facet_filters"]}
 
         return opts
+
+    def get_docsets_by_provider(self, provider):
+        items = {}
+        for key, docset in self.docsets.items():
+            if docset["provider"] == provider:
+                items[key] = docset
+
+        return items

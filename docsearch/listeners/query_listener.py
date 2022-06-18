@@ -10,7 +10,8 @@ class KeywordQueryEventListener(EventListener):
 
         query = event.get_argument() or ""
 
-        kw_docset = extension.get_docset_from_keyword(event.get_keyword())
+        kw_docset = self.get_docset_from_keyword(extension.preferences,
+                                                 event.get_keyword())
         if kw_docset:
             return extension.search_in_docset(kw_docset, query)
 
@@ -22,3 +23,18 @@ class KeywordQueryEventListener(EventListener):
             return extension.search_in_docset(docset, term)
 
         return extension.list_docsets(event, query)
+
+    def get_docset_from_keyword(self, preferences, keyword):
+        """ Returns a docset matching the extension keyword or None if no matches found """
+        kw_id = None
+        for key, value in preferences.items():
+            if value == keyword:
+                kw_id = key
+                break
+
+        if kw_id:
+            kw_parts = kw_id.split("_")
+            if len(kw_parts) == 2 and kw_parts[0] == "kw":
+                return kw_parts[1]
+
+        return None
