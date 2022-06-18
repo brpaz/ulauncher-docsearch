@@ -11,7 +11,7 @@ from docsearch.listeners.query_listener import KeywordQueryEventListener
 from docsearch.searcher import Searcher
 from threading import Thread, Timer
 from docsearch.indexers.mkdocs import MkDocsIndexer
-from docsearch.providers.constants import PROVIDER_ALGOLIA_DOCSEARCH, PROVIDER_MKDOCS
+from docsearch.providers.constants import PROVIDER_MKDOCS
 
 logger = logging.getLogger(__name__)
 

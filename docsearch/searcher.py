@@ -7,6 +7,7 @@ import os
 import logging
 
 from docsearch.providers.factory import ProviderFactory
+from docsearch.models import DocSet
 
 DEFAULT_DOC_IMAGE = 'images/icon.png'
 
@@ -23,7 +24,7 @@ class Searcher:
     """ Class that handles the documentation search """
 
     def __init__(self):
-        self.docsets = {}
+        self.docsets: dict[str][DocSet] = {}
 
         self.load_default_docsets()
         self.load_user_docsets()
@@ -55,7 +56,7 @@ class Searcher:
 
             self.docsets.update(user_docsets)
 
-    def get_docsets(self, filter_term):
+    def get_docsets(self, filter_term) -> DocSet:
         """ Returns a list of available docs """
         docs = []
         for key, value in self.docsets.items():
