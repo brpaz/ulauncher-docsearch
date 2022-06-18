@@ -538,5 +538,13 @@
         "provider": "mkdocs",
         "url": "https://kubernetes.github.io/ingress-nginx",
         "search_index_url": "https://kubernetes.github.io/ingress-nginx/search/search_index.json"
+    },
+    "argo": {
+        "name": "ArgoCD",
+        "description": "",
+        "icon": "images/docs/argocd.png",
+        "provider": "mkdocs",
+        "url": "https://argo-cd.readthedocs.io/en/stable",
+        "search_index_url": "https://argo-cd.readthedocs.io/en/stable/search/search_index.json"
     }
 }
