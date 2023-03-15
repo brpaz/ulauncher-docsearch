@@ -245,8 +245,8 @@
         "algolia_index": "laravel",
         "algolia_application_id": "BH4D9OD16A",
         "algolia_api_key": "7dc4fe97e150304d1bf34f5043f178c4",
-        "url": "https://laravel.com/docs/8.x/",
-        "facet_filters": "version:8.x"
+        "url": "https://laravel.com/docs/10.x/",
+        "facet_filters": "version:10.x"
     },
     "nestjs": {
         "name": "NestJS",
